@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+<title>Cool AI Projects — November 10, 2026</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="home" href="../index.html">Cool AI Projects</a>
+  <h1>Week of November 10, 2026</h1>
+  <p class="tagline">Open-source AI projects worth a look, every week</p>
+  <nav class="toc">
+    <a href="#local-llms">Local LLMs <span>4</span></a><a href="#creative">Creative &amp; Animation <span>4</span></a><a href="#science">Science <span>4</span></a><a href="#robotics">Robotics <span>4</span></a><a href="#games">Games <span>4</span></a>
+  </nav>
+</header>
+<main>
+
+<section id="local-llms">
+  <h2>Local LLMs</h2>
+  
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/synchopate/llama-modchip"><img src="https://raw.githubusercontent.com/synchopate/llama-modchip/main/assets/launch_284b_64gb.gif" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/synchopate/llama-modchip">synchopate/llama-modchip</a></h3>
+      <p class="blurb">llama-modchip is a set of llama.cpp kernel patches and requantized GGUF files that run mixture-of-experts models, including the 284B DeepSeek-V4-Flash, entirely on CPU with 64 GB of RAM. It squeezes that model to 1.71 bits per weight and uses cache-aware tiling, reporting about 44 tokens/s prefill at 256K context with no GPU.</p>
+      <p class="meta">
+        <span title="stars">★ 861</span>
+        <span title="estimated stars per week">+502/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        <a href="https://news.ycombinator.com/item?id=50411961">HN · 481 pts</a>
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <div class="body">
+      <h3><a href="https://github.com/mw00/project-maya">mw00/project-maya</a></h3>
+      <p class="blurb">Project Maya is a local inference engine that runs three very large models (GLM-5.3-Flash, DeepSeek-V4.1-Flash and MiniMax-M3.1-Flash) on NVIDIA or AMD GPUs, with a browser chat and an OpenAI- and Anthropic-compatible API. It spreads each model&#39;s experts across GPU memory, RAM and NVMe storage, adjusting as you chat, so models of 300B+ parameters can run on consumer hardware.</p>
+      <p class="meta">
+        <span title="stars">★ 2,758</span>
+        <span title="estimated stars per week">+552/wk</span>
+        <span>C++</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/ARahim3/DigUp"><img src="https://raw.githubusercontent.com/ARahim3/DigUp/main/docs/demo.gif" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/ARahim3/DigUp">ARahim3/DigUp</a></h3>
+      <p class="blurb">DigUp is a desktop app for Mac, Windows and Linux that searches your photos, PDFs, documents, recordings, videos and code by describing their content in plain language. It runs Google DeepMind&#39;s EmbeddingGemma 2 entirely on-device and jumps to the matching page or moment, while also matching exact strings and working across 100+ languages.</p>
+      <p class="meta">
+        <span title="stars">★ 6,356</span>
+        <span title="estimated stars per week">+1,348/wk</span>
+        <span>Swift</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/drumih/turbo-fieldfare"><img src="https://raw.githubusercontent.com/drumih/turbo-fieldfare/main/docs/assets/turbofieldfare-app.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/drumih/turbo-fieldfare">drumih/turbo-fieldfare</a></h3>
+      <p class="blurb">TurboFieldfare is a Swift and Metal runtime that runs the 26-billion-parameter Gemma 4 26B-A4B on Apple Silicon Macs, including 8 GB machines, with a Mac app, CLI and local OpenAI-compatible server. It keeps about 2 GB in memory and streams only the needed experts from SSD, reaching 5-6 tokens per second on an M2 MacBook Air.</p>
+      <p class="meta">
+        <span title="stars">★ 7,328</span>
+        <span title="estimated stars per week">+442/wk</span>
+        <span>Swift</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+</section>
+
+<section id="creative">
+  <h2>Creative &amp; Animation</h2>
+  
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/D3voz/openjutsu"><img src="https://raw.githubusercontent.com/D3voz/openjutsu/main/docs/media/advanced_swap.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/D3voz/openjutsu">D3voz/openjutsu</a></h3>
+      <p class="blurb">Openjutsu is a local Next.js app over a ComfyUI workflow that swaps or edits the main person in a video using a character photo, with modes for multi-person swaps, object removal, and background changes. It runs entirely on open weights (MiniMax H3, SAM 3.1, Qwen3-VL) on your own GPU while preserving the original camera, cuts, motion, and soundtrack.</p>
+      <p class="meta">
+        <span title="stars">★ 2,100</span>
+        <span title="estimated stars per week">+980/wk</span>
+        <span>TypeScript</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <div class="body">
+      <h3><a href="https://github.com/img2threejs/img2threejs">img2threejs/img2threejs</a></h3>
+      <p class="blurb">img2threejs is an agent skill that takes a single reference image of an object or character and writes a TypeScript Three.js factory that rebuilds it from primitives, procedural shaders, and generated geometry, with pivots, sockets, and colliders for animation. It uses no mesh files or photogrammetry, and a quality gate blocks generation until a detail inventory is complete.</p>
+      <p class="meta">
+        <span title="stars">★ 21,125</span>
+        <span title="estimated stars per week">+1,253/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/FlashML-org/FreeVideo"><img src="https://github.com/user-attachments/assets/7647a6f8-4306-403c-b147-45d7a393e18d" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/FlashML-org/FreeVideo">FlashML-org/FreeVideo</a></h3>
+      <p class="blurb">FreeVideo is a local inference engine that runs the MiniMax H3 video model as a ComfyUI plugin, with launchers for Windows, macOS and Linux. It streams weights between VRAM, RAM and disk and picks precision and attention kernels per GPU, so generation fits in 8 GB of VRAM and 16 GB of RAM.</p>
+      <p class="meta">
+        <span title="stars">★ 2,943</span>
+        <span title="estimated stars per week">+355/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/edenfunf/reelmimic"><img src="https://raw.githubusercontent.com/edenfunf/reelmimic/main/docs/assets/demo-sugar.gif" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/edenfunf/reelmimic">edenfunf/reelmimic</a></h3>
+      <p class="blurb">ReelMimic analyzes a reference video&#39;s shot lengths, transitions, colors, and camera moves, then produces a new 2D animated video in that style from a short brief, running locally through your own Claude Code or Codex account. Several agents build the shots in parallel, and a separate agent reviews each one, with before-and-after screenshots required as proof of every fix.</p>
+      <p class="meta">
+        <span title="stars">★ 1,879</span>
+        <span title="estimated stars per week">+306/wk</span>
+        <span>JavaScript</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+</section>
+
+<section id="science">
+  <h2>Science</h2>
+  
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/xuzhougeng/wisp-science"><img src="https://raw.githubusercontent.com/xuzhougeng/wisp-science/main/docs/assets/app-home.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/xuzhougeng/wisp-science">xuzhougeng/wisp-science</a></h3>
+      <p class="blurb">Wisp Science is a local-first desktop workbench where an AI agent runs Python and R, queries about 80 scientific databases through bundled MCP servers, and works on local, WSL, or SSH hosts using your own OpenAI-compatible or Anthropic models. It keeps figures, runs, and decisions in one project, and can freeze manuscript revisions into verifiable Evidence Capsules.</p>
+      <p class="meta">
+        <span title="stars">★ 1,069</span>
+        <span title="estimated stars per week">+57/wk</span>
+        <span>Rust</span>
+        <span>AGPL-3.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/HexaFuture/EmbodiedLab"><img src="https://raw.githubusercontent.com/HexaFuture/EmbodiedLab/main/docs/assets/demo.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/HexaFuture/EmbodiedLab">HexaFuture/EmbodiedLab</a></h3>
+      <p class="blurb">EmbodiedLab is a benchmark in which a Franka arm in an Isaac Sim physics lab must run its own experiment, reading instruments through three cameras, to find a hidden value across 30 mechanics, circuits, optics, thermal and chemistry tasks. Its parameters are redrawn for every instance, and a run counts only if the result is within tolerance, backed by recorded readings, and the bench is left in the required state.</p>
+      <p class="meta">
+        <span title="stars">★ 19</span>
+        <span title="estimated stars per week">+7/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/allenai/novelty-eval"><img src="https://raw.githubusercontent.com/allenai/novelty-eval/main/assets/fig1-oct14-media.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/allenai/novelty-eval">allenai/novelty-eval</a></h3>
+      <p class="blurb">This repository provides a benchmark and code for testing LLM-based novelty judges, using OpenReview papers that reviewers unanimously rated as novel or not, paired with ideas from an LLM generator. Its study finds that small prompt changes, such as telling a judge what reviewers concluded, can shift pairwise accuracy by over 50 points.</p>
+      <p class="meta">
+        <span title="stars">★ 18</span>
+        <span title="estimated stars per week">+7/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/NVIDIA-BioNeMo/BioNeMo-Inference-Runtime"><img src="https://raw.githubusercontent.com/NVIDIA-BioNeMo/BioNeMo-Inference-Runtime/main/docs/assets/speedup-vs-residues.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/NVIDIA-BioNeMo/BioNeMo-Inference-Runtime">NVIDIA-BioNeMo/BioNeMo-Inference-Runtime</a></h3>
+      <p class="blurb">BioNeMo Inference Runtime is an NVIDIA library that runs GPU-accelerated structure prediction for proteins, nucleic acids, and ligands, turning FASTA or MSA input into PDB or mmCIF files with confidence scores. It uses a five-stage pipeline with fused kernels and keeps models as ordinary PyTorch modules, so no TensorRT engine build is needed.</p>
+      <p class="meta">
+        <span title="stars">★ 84</span>
+        <span title="estimated stars per week">+6/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+</section>
+
+<section id="robotics">
+  <h2>Robotics</h2>
+  
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/dexmal/opendm"><img src="https://raw.githubusercontent.com/dexmal/opendm/main/docs/image/header.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/dexmal/opendm">dexmal/opendm</a></h3>
+      <p class="blurb">OpenDM releases DM0.5, a vision-language-action model for controlling robots from open-ended instructions, along with weights, training and inference scripts, and evaluation workflows. It targets long-horizon tasks, disturbances, and multiple robot embodiments, and the authors report higher scores than Pi0, Pi0.5, and GR00T-N1.7 on simulated benchmarks such as LIBERO and RoboTwin2.0.</p>
+      <p class="meta">
+        <span title="stars">★ 2,497</span>
+        <span title="estimated stars per week">+138/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/tuotuoLyu/FPO"><img src="https://raw.githubusercontent.com/tuotuoLyu/FPO/main/assets/banner.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/tuotuoLyu/FPO">tuotuoLyu/FPO</a></h3>
+      <p class="blurb">FPO is the official code for fine-tuning the pi0 vision-language-action robot policy with online PPO-style reinforcement learning, trained on LIBERO and ALOHA Transfer Cube tasks. Because the exact likelihood of a flow-matching policy is intractable, it builds the PPO ratio from per-sample changes in the conditional flow-matching loss, and the paper reports a LIBERO average of 87.2% against 85.5% for pi0-FAST.</p>
+      <p class="meta">
+        <span title="stars">★ 131</span>
+        <span title="estimated stars per week">+76/wk</span>
+        <span>Python</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/Huy-Quang-Dao/instantTrack"><img src="https://raw.githubusercontent.com/Huy-Quang-Dao/instantTrack/main/media/equal_time_3min.gif" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/Huy-Quang-Dao/instantTrack">Huy-Quang-Dao/instantTrack</a></h3>
+      <p class="blurb">InstantTrack trains a single whole-body motion-tracking policy for the Unitree G1 humanoid across 40 LAFAN1 clips, reaching a normalized return of 0.82 with no failed clips in about three minutes on one RTX 5090. It builds on SuperMimic&#39;s differentiable world model and adds GPU-side training optimizations and a contact reward, and the README openly corrects earlier benchmark numbers and flags results that are not yet statistically established.</p>
+      <p class="meta">
+        <span title="stars">★ 190</span>
+        <span title="estimated stars per week">+111/wk</span>
+        <span>Python</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/groundingpi/GroundingPI"><img src="https://raw.githubusercontent.com/groundingpi/GroundingPI/main/docs/assets/teaser.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/groundingpi/GroundingPI">groundingpi/GroundingPI</a></h3>
+      <p class="blurb">GroundingPI is a 4B-parameter vision-language model that handles detection, referring expressions, pointing, OCR, GUI and layout grounding through one OpenAI-compatible image-and-text API, served with vLLM. Its authors also test it as a perceptual base for robot manipulation and autonomous driving, reporting better data efficiency in controlled evaluations.</p>
+      <p class="meta">
+        <span title="stars">★ 423</span>
+        <span title="estimated stars per week">+72/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+</section>
+
+<section id="games">
+  <h2>Games</h2>
+  
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/THUSI-Lab/GameScaling"><img src="https://raw.githubusercontent.com/THUSI-Lab/GameScaling/main/assets/title-light.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/THUSI-Lab/GameScaling">THUSI-Lab/GameScaling</a></h3>
+      <p class="blurb">GameScaling provides inference code and eight Qwen3.5-based vision-language checkpoints (0.8B to 27B) that read a game frame plus recent history and output the next 200 ms of keyboard and mouse actions. Notably, all models use 1,600 hours of gameplay, comparing Minecraft-only training against a mixed-game set, and the repository includes a vLLM serving script but no training code.</p>
+      <p class="meta">
+        <span title="stars">★ 510</span>
+        <span title="estimated stars per week">+115/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/MCG-NJU/AutoTavern"><img src="https://raw.githubusercontent.com/MCG-NJU/AutoTavern/main/docs/assets/autotavern-banner.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/MCG-NJU/AutoTavern">MCG-NJU/AutoTavern</a></h3>
+      <p class="blurb">AutoTavern provides TavernGym, a deterministic Rust-based Hearthstone Battlegrounds simulator with Python bindings and a reinforcement learning interface, plus TavernBench, a set of 960 tasks testing combat, positioning and strategy decisions. It covers complete eight-player games under patch 37.0.2 with exact legal action masks, and the benchmark can be scored from released answers using only Python&#39;s standard library.</p>
+      <p class="meta">
+        <span title="stars">★ 274</span>
+        <span title="estimated stars per week">+113/wk</span>
+        <span>Rust</span>
+        <span>MIT</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/Calix-L/DanKS"><img src="https://raw.githubusercontent.com/Calix-L/DanKS/main/assets/danks-promotional-hero-v2.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/Calix-L/DanKS">Calix-L/DanKS</a></h3>
+      <p class="blurb">DanKS is a Guandan card-game agent that ranks candidate plays by the combinations left in the remaining hand, using an Actor-Critic policy trained with PPO. It also ships two generations of an open-source web game service with a referee and an HTTP interface for connecting your own AI, though trained weights are not included.</p>
+      <p class="meta">
+        <span title="stars">★ 831</span>
+        <span title="estimated stars per week">+72/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+  <article class="card">
+    
+    <a class="thumb" href="https://github.com/Jaasssoooonnnnn/FirstLight_CR"><img src="https://raw.githubusercontent.com/Jaasssoooonnnnn/FirstLight_CR/main/docs/assets/firstlight-cr.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    
+    <div class="body">
+      <h3><a href="https://github.com/Jaasssoooonnnnn/FirstLight_CR">Jaasssoooonnnnn/FirstLight_CR</a></h3>
+      <p class="blurb">FirstLight CR trains Clash Royale agents offline, using imitation learning on 252,238 reconstructed replays followed by PPO self-play, with a native simulation environment that has Python reset/step interfaces. It is unusual in running the game engine itself inside an Android VM, and it ships five checkpoints, including a Hog Cycle specialist the author used to reach Hall of Fame.</p>
+      <p class="meta">
+        <span title="stars">★ 254</span>
+        <span title="estimated stars per week">+27/wk</span>
+        <span>Python</span>
+        <span>Apache-2.0</span>
+        
+      </p>
+    </div>
+  </article>
+  
+</section>
+
+</main>
+<footer>
+  Screened 874 repos, classified 152.
+  LLM cost this issue: $0.157.
+  <a href="../index.html">All issues</a>
+</footer>
+</body>
+</html>

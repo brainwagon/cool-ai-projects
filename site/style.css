@@ -1,0 +1,60 @@
+:root {
+  --bg: #faf8f4; --fg: #1f1d1a; --muted: #6b665e; --card: #ffffff;
+  --line: #e6e1d8; --accent: #b4461f; --chip: #f1ece3;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161514; --fg: #ece8e1; --muted: #a29b90; --card: #1f1e1c;
+    --line: #34312d; --accent: #f08a5d; --chip: #2a2825;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.masthead, main, footer { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+.masthead { padding-top: 40px; padding-bottom: 8px; }
+.home { font-weight: 600; letter-spacing: .02em; }
+h1 { font-size: 2rem; margin: .2em 0 0; }
+.tagline { color: var(--muted); margin: .2em 0 1em; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+.toc a {
+  background: var(--chip); color: var(--fg); padding: 4px 12px;
+  border-radius: 999px; font-size: .9rem;
+}
+.toc a span { color: var(--muted); margin-left: 4px; }
+h2 {
+  margin: 2.2em 0 .6em; padding-bottom: .3em; font-size: 1.35rem;
+  border-bottom: 2px solid var(--line);
+}
+.card {
+  display: flex; gap: 16px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px; margin: 0 0 14px;
+}
+.thumb { flex: 0 0 200px; }
+.thumb img {
+  width: 200px; height: 130px; object-fit: cover; border-radius: 6px;
+  background: var(--chip); display: block;
+}
+.body { min-width: 0; }
+h3 { margin: 0 0 .3em; font-size: 1.05rem; overflow-wrap: anywhere; }
+.blurb { margin: 0 0 .5em; }
+.meta { margin: 0; font-size: .85rem; color: var(--muted);
+        display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.empty { color: var(--muted); font-style: italic; }
+footer { color: var(--muted); font-size: .85rem; padding-top: 30px;
+         padding-bottom: 40px; }
+.archive { list-style: none; padding: 0; }
+.archive li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.archive a { font-weight: 600; margin-right: 10px; }
+.archive .count { color: var(--muted); font-size: .9rem; }
+.archive .hl { display: block; color: var(--muted); font-size: .85rem;
+               overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .card { flex-direction: column; }
+  .thumb, .thumb img { width: 100%; flex-basis: auto; height: 180px; }
+}
