@@ -1,0 +1,121 @@
+# Settings for the weekly AI-projects digest.
+# Edit freely; no code changes needed.
+
+title: "Cool AI Projects"
+tagline: "Open-source AI projects worth a look, every week"
+
+# Each area runs its GitHub search queries.  A query is any GitHub
+# repo-search string; date and star filters are added automatically.
+areas:
+  local-llms:
+    name: "Local LLMs"
+    about: >-
+      Running language models on your own hardware: inference engines,
+      quantization, local assistants, desktop/CLI front ends, on-device
+      agents and tooling.
+    queries:
+      - "topic:local-llm"
+      - "topic:llama-cpp"
+      - "topic:ollama"
+      - "topic:gguf"
+      - "topic:llm-inference"
+  creative:
+    name: "Creative & Animation"
+    about: >-
+      AI tools for art, music, video and especially animation: motion
+      generation, character animation, text/image-to-video, ComfyUI
+      nodes, 3D generation, generative art.
+    queries:
+      - "topic:text-to-video"
+      - "topic:video-generation"
+      - "topic:motion-generation"
+      - "topic:animation topic:deep-learning"
+      - "topic:comfyui"
+      - "topic:generative-art"
+      - "topic:3d-generation"
+  science:
+    name: "Science"
+    about: >-
+      AI applied to research: biology, chemistry, physics, astronomy,
+      climate, mathematics, scientific ML and simulation.
+    queries:
+      - "topic:ai-for-science"
+      - "topic:scientific-machine-learning"
+      - "topic:protein-design"
+      - "topic:computational-biology topic:deep-learning"
+      - "topic:astronomy topic:machine-learning"
+  robotics:
+    name: "Robotics"
+    about: >-
+      Robot learning, embodied AI, manipulation and locomotion
+      policies, simulation, ROS integrations, DIY/hobby robots with AI.
+    queries:
+      - "topic:robot-learning"
+      - "topic:embodied-ai"
+      - "topic:robotics topic:deep-learning"
+      - "topic:humanoid"
+      - "topic:ros2 topic:llm"
+  games:
+    name: "Games"
+    about: >-
+      AI in and for games: game-playing agents, reinforcement learning
+      environments, procedural generation, AI NPCs, games built around
+      a model.
+    queries:
+      - "topic:game-ai"
+      - "topic:procedural-generation"
+      - "topic:reinforcement-learning topic:games"
+      - "topic:ai-npc"
+      - "topic:gymnasium"
+
+search:
+  new_within_days: 180     # "new" = created within this window
+  new_min_stars: 15
+  active_within_days: 14   # established repos must be pushed this recently
+  active_min_stars: 300
+  results_per_query: 40
+
+hacker_news:
+  enabled: true
+  lookback_days: 7
+  min_points: 15
+
+filters:
+  require_license: true
+  max_days_since_push: 45
+  # Quick reject before spending LLM calls (matched in description/topics).
+  exclude_keywords:
+    - marketing
+    - seo
+    - advertis
+    - adtech
+    - lead generation
+    - lead-generation
+    - crm
+    - sales
+    - e-commerce
+    - ecommerce
+    - dropshipping
+    - trading bot
+    - crypto
+    - airdrop
+    - affiliate
+    - growth hacking
+
+selection:
+  llm_candidates_per_area: 25   # top pre-scored repos sent to the classifier
+  llm_candidates_hn: 30
+  min_interest: 3               # classifier interest score, 1-5
+  picks_per_area: 4
+
+llm:
+  base_url: "https://openrouter.ai/api/v1"
+  classify_model: "anthropic/claude-haiku-5.5"
+  blurb_model: "anthropic/claude-sonnet-5.5"
+  readme_chars: 4000
+  reclassify_after_days: 60
+  workers: 6
+
+paths:
+  db: "data/digest.db"
+  site: "site"

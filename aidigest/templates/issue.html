@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+<title>{{ cfg.title }} — {{ date.strftime("%B %-d, %Y") }}</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="masthead">
+  <a class="home" href="../index.html">{{ cfg.title }}</a>
+  <h1>Week of {{ date.strftime("%B %-d, %Y") }}</h1>
+  <p class="tagline">{{ cfg.tagline }}</p>
+  <nav class="toc">
+    {% for s in sections %}<a href="#{{ s.key }}">{{ s.name }} <span>{{ s.repos|length }}</span></a>{% endfor %}
+  </nav>
+</header>
+<main>
+{% for s in sections %}
+<section id="{{ s.key }}">
+  <h2>{{ s.name }}</h2>
+  {% if not s.repos %}<p class="empty">Nothing new cleared the bar this week.</p>{% endif %}
+  {% for r in s.repos %}
+  <article class="card">
+    {% if r.image %}
+    <a class="thumb" href="{{ r.html_url }}"><img src="{{ r.image }}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentNode.remove()"></a>
+    {% endif %}
+    <div class="body">
+      <h3><a href="{{ r.html_url }}">{{ r.full_name }}</a></h3>
+      <p class="blurb">{{ r.blurb or r.description }}</p>
+      <p class="meta">
+        <span title="stars">★ {{ "{:,}".format(r.stars) }}</span>
+        {% if r.growth >= 1 %}<span title="{{ 'measured' if r.growth_measured else 'estimated' }} stars per week">+{{ "{:,.0f}".format(r.growth) }}/wk</span>{% endif %}
+        {% if r.language %}<span>{{ r.language }}</span>{% endif %}
+        <span>{{ r.license }}</span>
+        {% for h in r.hn[:1] %}<a href="{{ h.url }}">HN · {{ h.points }} pts</a>{% endfor %}
+      </p>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+</main>
+<footer>
+  Screened {{ stats.candidates }} repos, classified {{ stats.classified }}.
+  {% if stats.cost %}LLM cost this issue: ${{ "%.3f"|format(stats.cost) }}.{% endif %}
+  <a href="../index.html">All issues</a>
+</footer>
+</body>
+</html>
