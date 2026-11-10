@@ -29,6 +29,7 @@ Repos are never featured twice.  State lives in `data/digest.db`
     export OPENROUTER_API_KEY=...       # GitHub token comes from `gh`
     python -m aidigest --dry-run        # build without marking picks
     python -m aidigest --no-llm         # heuristics only, free
+    python -m aidigest --force          # rebuild even if this week has an issue
 
 Output goes to `site/`.  Everything tunable (queries, thresholds,
 models, picks per area) is in `config.yaml`.

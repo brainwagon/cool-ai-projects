@@ -26,11 +26,20 @@ def main():
     ap.add_argument("--no-llm", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--site", help="output directory (default from config)")
+    ap.add_argument("--force", action="store_true",
+                    help="build even if an issue exists from the last 6 days")
     args = ap.parse_args()
 
     with open(args.config) as f:
         cfg = yaml.safe_load(f)
     today, areas = args.date, cfg["areas"]
+    site = args.site or cfg["paths"]["site"]
+
+    recent = render.recent_issue(site, today, days=6)
+    if recent and not args.force:
+        print(f"Issue {recent} already covers this week; skipping "
+              "(use --force to build anyway).")
+        return
     db = DB(cfg["paths"]["db"])
     gh = GitHub(find_token())
     llm = None if args.no_llm else LLM(cfg["llm"])
@@ -124,8 +133,7 @@ def main():
 
     stats = {"candidates": len(repos), "classified": len(chosen),
              "cost": llm.cost if llm else 0}
-    path = render.write_issue(args.site or cfg["paths"]["site"], cfg, today,
-                              sections, stats)
+    path = render.write_issue(site, cfg, today, sections, stats)
     if not args.dry_run:
         for s in sections:
             for r in s["repos"]:

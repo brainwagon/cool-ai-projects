@@ -3,12 +3,26 @@
 import json
 import os
 import shutil
+from datetime import date
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 HERE = os.path.dirname(__file__)
 env = Environment(loader=FileSystemLoader(os.path.join(HERE, "templates")),
                   autoescape=select_autoescape(["html"]))
+
+
+def recent_issue(site, today, days):
+    """Date of an issue published within `days` before today, or None."""
+    path = os.path.join(site, "issues.json")
+    if not os.path.exists(path):
+        return None
+    with open(path) as f:
+        for issue in json.load(f):
+            age = (today - date.fromisoformat(issue["date"])).days
+            if 0 <= age <= days:
+                return issue["date"]
+    return None
 
 
 def write_issue(site, cfg, issue_date, sections, stats):
