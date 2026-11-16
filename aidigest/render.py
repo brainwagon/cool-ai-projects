@@ -12,15 +12,26 @@ env = Environment(loader=FileSystemLoader(os.path.join(HERE, "templates")),
                   autoescape=select_autoescape(["html"]))
 
 
-def recent_issue(site, today, days):
-    """Date of an issue published within `days` before today, or None."""
+def recent_issue(site, today, max_age_days=2):
+    """Date of an issue that already covers this week, or None.
+
+    An issue blocks a new one when it falls in the same ISO week as
+    `today` (a second run inside one week), or when it is at most
+    `max_age_days` old (a manual catch-up run the day before the
+    scheduled one).  A weekly cron on a Monday sees the previous issue
+    at 6 or 7 days old, which must not block this week's issue.
+    """
     path = os.path.join(site, "issues.json")
     if not os.path.exists(path):
         return None
+    this_week = today.isocalendar()[:2]
     with open(path) as f:
         for issue in json.load(f):
-            age = (today - date.fromisoformat(issue["date"])).days
-            if 0 <= age <= days:
+            published = date.fromisoformat(issue["date"])
+            age = (today - published).days
+            if age < 0:
+                continue
+            if age <= max_age_days or published.isocalendar()[:2] == this_week:
                 return issue["date"]
     return None
 

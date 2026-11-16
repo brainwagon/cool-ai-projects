@@ -27,7 +27,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--site", help="output directory (default from config)")
     ap.add_argument("--force", action="store_true",
-                    help="build even if an issue exists from the last 6 days")
+                    help="build even if this week already has an issue")
     args = ap.parse_args()
 
     with open(args.config) as f:
@@ -35,7 +35,7 @@ def main():
     today, areas = args.date, cfg["areas"]
     site = args.site or cfg["paths"]["site"]
 
-    recent = render.recent_issue(site, today, days=6)
+    recent = render.recent_issue(site, today)
     if recent and not args.force:
         print(f"Issue {recent} already covers this week; skipping "
               "(use --force to build anyway).")
